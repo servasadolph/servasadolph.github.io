@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { MapPin, GraduationCap, Microscope } from "lucide-react";
 
 export default function About() {
@@ -16,28 +17,15 @@ export default function About() {
               className="relative rounded-2xl overflow-hidden"
               style={{ aspectRatio: "4/5", backgroundColor: "var(--bg-card)" }}
             >
-              {/* Photo placeholder with initials */}
-              <div
-                className="w-full h-full flex flex-col items-center justify-center"
-                style={{
-                  background:
-                    "linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%)",
-                }}
-              >
-                <div
-                  className="text-7xl font-bold mb-4"
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    color: "var(--accent)",
-                    opacity: 0.4,
-                  }}
-                >
-                  SA
-                </div>
-                <p className="text-sm" style={{ color: "var(--text-light)" }}>
-                  Photo coming soon
-                </p>
-              </div>
+              {/* Profile photo */}
+              <Image
+                src="/servas.jpg"
+                alt="Servas Adolph"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
 
               {/* Decorative corner accent */}
               <div
