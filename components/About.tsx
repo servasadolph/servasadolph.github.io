@@ -26,6 +26,14 @@ export default function About() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
+              {/* Subtle bottom gradient for depth */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(227,218,204,0.45) 0%, transparent 40%)",
+                }}
+              />
 
               {/* Decorative corner accent */}
               <div

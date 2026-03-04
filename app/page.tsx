@@ -10,12 +10,15 @@ import Resume from "@/components/Resume";
 import Vision from "@/components/Vision";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ProgressBar from "@/components/ProgressBar";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   useScrollReveal();
 
   return (
     <main>
+      <ProgressBar />
       <Navbar />
       <Hero />
       <About />
@@ -26,6 +29,7 @@ export default function Home() {
       <Vision />
       <Contact />
       <Footer />
+      <BackToTop />
     </main>
   );
 }

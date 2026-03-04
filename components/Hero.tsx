@@ -1,5 +1,40 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import { ArrowDown, FileText, Mail } from "lucide-react";
+
+function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const duration = 1400;
+          const steps = 40;
+          const increment = target / steps;
+          let current = 0;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              setCount(target);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(current));
+            }
+          }, duration / steps);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [target]);
+
+  return <div ref={ref}>{count}{suffix}</div>;
+}
 
 export default function Hero() {
   return (
@@ -184,17 +219,17 @@ export default function Hero() {
             style={{ borderTop: "1px solid var(--border)" }}
           >
             {[
-              { value: "5+", label: "Research Areas" },
-              { value: "4+", label: "Active Projects" },
-              { value: "2023", label: "MSc Graduated" },
-              { value: "SCH", label: "University" },
+              { numeric: 5, suffix: "+", label: "Research Areas" },
+              { numeric: 4, suffix: "+", label: "Active Projects" },
+              { numeric: 4,  suffix: "",  label: "Publications" },
+              { numeric: 8,  suffix: "+", label: "Years of Study" },
             ].map((s) => (
               <div key={s.label}>
                 <div
                   className="text-2xl font-bold"
                   style={{ fontFamily: "'Playfair Display', serif", color: "var(--text-dark)" }}
                 >
-                  {s.value}
+                  <AnimatedCounter target={s.numeric} suffix={s.suffix} />
                 </div>
                 <div className="text-sm" style={{ color: "var(--text-light)" }}>
                   {s.label}

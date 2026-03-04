@@ -1,18 +1,22 @@
 "use client";
-import { Mail, Linkedin, BookOpen, Github, Award } from "lucide-react";
+import { useState } from "react";
+import { Mail, Linkedin, BookOpen, Github, Award, Copy, Check } from "lucide-react";
+
+const EMAIL = "servasadolph@gmail.com";
 
 const contacts = [
   {
     icon: <Mail size={20} />,
     label: "Email",
-    value: "servasadolph@gmail.com",
-    href: "mailto:servasadolph@gmail.com",
+    value: EMAIL,
+    href: `mailto:${EMAIL}`,
     desc: "Primary contact",
+    copyable: true,
   },
   {
     icon: <Linkedin size={20} />,
     label: "LinkedIn",
-    value: "servasadolph",
+    value: "servas-adolph-tarimo",
     href: "https://linkedin.com/in/servas-adolph-tarimo-66494066",
     desc: "Professional network",
   },
@@ -40,20 +44,23 @@ const contacts = [
 ];
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(EMAIL).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
-    <section
-      id="contact"
-      className="py-28"
-      style={{ backgroundColor: "var(--bg-primary)" }}
-    >
+    <section id="contact" className="py-28" style={{ backgroundColor: "var(--bg-primary)" }}>
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="reveal mb-16 text-center max-w-xl mx-auto">
           <p className="section-label mb-4">Contact</p>
-          <h2
-            className="text-4xl font-bold mb-4"
-            style={{ color: "var(--text-dark)" }}
-          >
+          <h2 className="text-4xl font-bold mb-4" style={{ color: "var(--text-dark)" }}>
             Let&apos;s Connect
           </h2>
           <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
@@ -70,14 +77,10 @@ export default function Contact() {
               target={c.href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
               className={`reveal reveal-delay-${Math.min(i + 1, 4)} group flex items-start gap-4 p-5 rounded-2xl transition-all duration-300`}
-              style={{
-                backgroundColor: "var(--bg-card)",
-                border: "1px solid var(--border)",
-              }}
+              style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border)" }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
-                (e.currentTarget as HTMLElement).style.boxShadow =
-                  "0 16px 40px rgba(28, 24, 20, 0.1)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 16px 40px rgba(28, 24, 20, 0.1)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
@@ -86,37 +89,46 @@ export default function Contact() {
             >
               {/* Icon */}
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300"
+                className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
                 style={{ backgroundColor: "var(--bg-secondary)", color: "var(--accent)" }}
               >
                 {c.icon}
               </div>
 
               {/* Text */}
-              <div>
+              <div className="flex-1 min-w-0">
                 <div className="text-xs font-medium mb-0.5" style={{ color: "var(--text-light)" }}>
                   {c.desc}
                 </div>
-                <div
-                  className="text-sm font-semibold mb-0.5"
-                  style={{ color: "var(--text-dark)" }}
-                >
+                <div className="text-sm font-semibold mb-0.5" style={{ color: "var(--text-dark)" }}>
                   {c.label}
                 </div>
-                <div className="text-xs" style={{ color: "var(--text-muted)" }}>
+                <div className="text-xs truncate" style={{ color: "var(--text-muted)" }}>
                   {c.value}
                 </div>
               </div>
+
+              {/* Copy button for email */}
+              {c.copyable && (
+                <button
+                  onClick={handleCopy}
+                  title={copied ? "Copied!" : "Copy email"}
+                  className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200"
+                  style={{
+                    backgroundColor: copied ? "rgba(122,92,58,0.12)" : "var(--bg-secondary)",
+                    color: copied ? "var(--accent)" : "var(--text-light)",
+                  }}
+                >
+                  {copied ? <Check size={14} /> : <Copy size={14} />}
+                </button>
+              )}
             </a>
           ))}
 
-          {/* Email CTA card */}
+          {/* CTA card */}
           <div
             className="reveal reveal-delay-5 sm:col-span-2 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-            style={{
-              backgroundColor: "var(--bg-secondary)",
-              border: "1px solid var(--border)",
-            }}
+            style={{ backgroundColor: "var(--bg-secondary)", border: "1px solid var(--border)" }}
           >
             <div>
               <p className="font-semibold mb-1" style={{ color: "var(--text-dark)" }}>
@@ -127,7 +139,7 @@ export default function Contact() {
               </p>
             </div>
             <a
-              href="mailto:servasadolph@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="btn-primary shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold"
             >
               <Mail size={14} />

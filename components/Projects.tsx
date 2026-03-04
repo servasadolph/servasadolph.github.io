@@ -71,12 +71,19 @@ export default function Projects() {
             >
               {/* Color banner */}
               <div
-                className="h-36 flex items-end p-6"
+                className="h-36 relative flex items-end justify-between p-6"
                 style={{
                   backgroundColor: proj.color,
                   background: `linear-gradient(135deg, ${proj.color} 0%, ${proj.accent}18 100%)`,
                 }}
               >
+                {/* Card number */}
+                <span
+                  className="absolute top-4 right-5 text-xs font-semibold tracking-widest"
+                  style={{ color: `${proj.accent}60`, fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <h3
                   className="text-lg font-semibold leading-snug"
                   style={{ fontFamily: "'Playfair Display', serif", color: "var(--text-dark)" }}
