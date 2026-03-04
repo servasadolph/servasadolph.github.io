@@ -161,7 +161,7 @@ export default function Hero() {
               View Research
             </a>
             <a
-              href="/cv.pdf"
+              href="https://drive.google.com/file/d/1wT7QgBuHbP4l5IiLpIh4yWSUn_08Bkdx"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold"

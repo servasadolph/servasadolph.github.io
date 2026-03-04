@@ -12,7 +12,7 @@ const contacts = [
   {
     icon: <Linkedin size={20} />,
     label: "LinkedIn",
-    value: "servas-adolph-tarimo",
+    value: "servasadolph",
     href: "https://linkedin.com/in/servas-adolph-tarimo-66494066",
     desc: "Professional network",
   },

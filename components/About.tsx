@@ -94,13 +94,15 @@ export default function About() {
             </h2>
 
             <p className="mb-4 leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              I am a PhD student in the Department of Future Convergence Technology at Soonchunhyang University, South Korea. My research focuses on multimodal machine learning for healthcare — building systems that reason from diverse data modalities including medical images, EEG signals, audio, facial expressions, and clinical text.
+              I am a PhD researcher in the Department of Future Convergence Technology at Soonchunhyang University, South Korea. My work centers on multimodal machine learning for healthcare — designing intelligent systems that integrate medical images, EEG signals, audio, facial expressions, and clinical text to enable more comprehensive clinical understanding.
             </p>
+
             <p className="mb-4 leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              I work on domain adaptation techniques that allow AI models to generalize across clinical sites and populations — a critical challenge for real-world deployment. I am also deeply invested in clinical AI systems, including medical report generation using LLMs and Retrieval-Augmented Generation (RAG) for evidence-grounded decision support.
+              My research addresses one of the core challenges of medical AI: generalization. I develop domain adaptation methods that allow models to transfer reliably across hospitals, devices, and patient populations. In parallel, I build clinical AI systems powered by large language models, including medical report generation and Retrieval-Augmented Generation (RAG) frameworks for evidence-grounded decision support.
             </p>
+
             <p className="mb-8 leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              I grew up in Tanzania, where witnessing the gap between available AI capabilities and accessible healthcare shaped my research identity. My long-term mission is to build systems that work not only in top-tier hospitals, but in the clinics where they are needed most.
+              Growing up in Tanzania exposed me to the disparity between technological advancement and healthcare accessibility. That experience shapes my research vision: to build multimodal AI systems that are not only state-of-the-art, but deployable, trustworthy, and impactful in real-world clinical environments — especially in low-resource settings.
             </p>
 
             {/* Highlights */}
