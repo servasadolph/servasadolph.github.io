@@ -11,19 +11,17 @@
           transform: translate3d(0, 0 , 0);
 
   @include clearfix();
-  margin-bottom: 1em;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-top: 0;
   min-width: 0;
-
-  @media (orientation: portrait) {
-    margin-top: 1em;
-  }
 
   /* Sticky (not fixed) so it stays in normal grid flow and can never
      overlap or misalign with the content column while following scroll. */
   @media screen and (min-width: $sidebar-screen-min-width) {
     position: sticky;
-    top: $masthead-height;
-    max-height: calc(100vh - #{$masthead-height});
+    top: 1.25rem;
+    max-height: calc(100vh - #{$masthead-height} - 2rem);
     overflow-y: auto;
   }
 
@@ -39,10 +37,14 @@
   p, li {
     font-family: $sans-serif;
     font-size: $type-size-6;
-    line-height: 1.5;
+    line-height: 1.55;
 
     @include breakpoint($medium) {
-      font-size: $type-size-5;
+      font-size: 0.9em;
+    }
+
+    @include breakpoint($large) {
+      font-size: 0.88em;
     }
   }
 
@@ -55,7 +57,7 @@
   background:
     linear-gradient(180deg, var(--global-surface-raised-color) 0%, var(--global-surface-color) 100%);
   border: 1px solid var(--global-border-color);
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: var(--global-card-shadow);
   padding: 1.1em 1.2em;
 
@@ -72,7 +74,7 @@
     max-width: none;
     margin-left: 0;
     margin-right: 0;
-    padding: 1.35em 1.25em;
+    padding: 1.55rem 1.45rem;
   }
 }
 
@@ -171,11 +173,11 @@
   }
 
   @include breakpoint($large) {
-    text-align: left;
+    text-align: center;
   }
 
   img {
-    max-width: 175px;
+    max-width: 10.75rem;
     border-radius: 50%;
     box-shadow: 0 10px 24px rgba(33, 31, 26, 0.14);
 
@@ -203,7 +205,7 @@
   }
 
   @include breakpoint($large) {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -211,8 +213,8 @@
   margin: 0;
 
   @include breakpoint($medium) {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0.85rem;
+    margin-bottom: 0.45rem;
   }
 }
 .sidebar .author__name {
@@ -248,8 +250,8 @@
   font-weight: 500;
 
   @include breakpoint($medium) {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 0.35rem;
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -341,18 +343,35 @@
   }
 
   li {
+    margin-bottom: 0.45rem;
     overflow-wrap: anywhere;
+
+    &.author__desktop {
+      display: grid;
+      grid-template-columns: 1.25rem minmax(0, 1fr);
+      column-gap: 0.55rem;
+      align-items: baseline;
+    }
+
+    i {
+      width: 1.25rem;
+      margin-right: 0;
+      text-align: center;
+      color: var(--global-text-color-light);
+    }
   }
 
   a {
-    display: block;
+    display: grid;
+    grid-template-columns: 1.25rem minmax(0, 1fr);
+    column-gap: 0.55rem;
+    align-items: baseline;
+    min-width: 0;
     overflow-wrap: anywhere;
-    margin-bottom: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    margin-bottom: 0;
+    padding: 0;
     color: inherit;
-    font-size: $type-size-6;
+    font-size: inherit;
     font-weight: 600;
     text-decoration: none;
 

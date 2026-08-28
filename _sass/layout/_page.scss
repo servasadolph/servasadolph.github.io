@@ -4,16 +4,18 @@
 
 #main {
   @include clearfix;
-  width: min(100% - 1.7em, #{$x-large});
+  width: min(calc(100% - 1.5rem), #{$x-large});
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.6em;
+  margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
   @include breakpoint($medium) {
-    width: min(100% - 2em, #{$x-large});
-    margin-top: 2.25em;
+    width: min(calc(100% - 2.25rem), #{$x-large});
+    margin-top: 2rem;
+    margin-bottom: 4rem;
   }
 
   /* Real two-column grid for sidebar + content, shared by every page
@@ -21,17 +23,25 @@
      they're always sized consistently against the sidebar. */
   @include breakpoint($large) {
     display: grid;
-    grid-template-columns: minmax(17rem, 18.75rem) minmax(0, 1fr);
-    column-gap: 2rem;
+    grid-template-columns: minmax(18rem, 19.5rem) minmax(0, 1fr);
+    column-gap: 1.75rem;
     align-items: start;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: min(calc(100% - 3rem), #{$x-large});
+    grid-template-columns: 19.5rem minmax(0, 1fr);
+    column-gap: 2rem;
   }
 }
 
 .page {
+  @include clearfix;
   min-width: 0;
 
   .page__inner-wrap {
     @include full();
+    @include clearfix;
 
     .page__content,
     .page__meta,
@@ -47,24 +57,28 @@
   background:
     linear-gradient(180deg, var(--global-surface-raised-color) 0%, var(--global-surface-color) 58%);
   border: 1px solid var(--global-border-color);
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: var(--global-soft-shadow);
-  padding: 1.35em 1.15em;
+  padding: 1.25rem 1.1rem;
   overflow-wrap: break-word;
   height: fit-content;
 
   @include breakpoint($medium) {
-    padding: 2.15em 2.35em;
+    padding: 2rem 2.15rem;
   }
 
   @include breakpoint($large) {
-    padding: 2.5em 2.75em;
+    padding: 2.25rem 2.5rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 2.65rem 3rem;
   }
 }
 
 .page__title {
   margin-top: 0;
-  margin-bottom: 0.8em;
+  margin-bottom: 1rem;
   line-height: 1.1;
   color: var(--global-text-color);
 
@@ -81,13 +95,27 @@
 .page__content {
   color: var(--global-text-color);
 
+  > p,
+  > ul,
+  > ol,
+  > dl,
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    max-width: 56rem;
+  }
+
   > p:first-child {
     font-size: 1.02em;
     line-height: 1.68;
   }
 
   h2 {
-    margin-top: 1.65em;
+    margin-top: 1.85em;
+    margin-bottom: 0.85em;
     padding-bottom: 0.45em;
     color: var(--global-text-color);
     border-bottom: 1px solid var(--global-border-color);
@@ -101,6 +129,10 @@
       background: var(--global-base-color);
       border-radius: 999px;
     }
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   p, li, dl {
@@ -110,7 +142,13 @@
 
   ul,
   ol {
-    padding-left: 1.2em;
+    margin-top: 0.7rem;
+    margin-bottom: 1.45rem;
+    padding-left: 1.3rem;
+  }
+
+  li + li {
+    margin-top: 0.45rem;
   }
 
   li::marker {
@@ -133,6 +171,7 @@
   a {
     color: var(--global-link-color);
     font-weight: 600;
+    overflow-wrap: anywhere;
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
