@@ -27,23 +27,19 @@ I hold an MSc in Big Data Engineering (2023) from Soonchunhyang University and a
 <div class="focus-list">
   <article class="focus-item">
     <h3>Domain Adaptation in Medical AI</h3>
-    <p>Transfer learning and domain adaptation techniques that let models generalize across clinical sites, imaging protocols, and patient populations without full re-training.</p>
+    <p>I build models that keep working well when moved from one hospital to another, even when the images, machines, or patient data look different. This helps AI tools stay accurate in real hospitals, not just in one lab's dataset.</p>
   </article>
   <article class="focus-item">
-    <h3>Multimodal Emotion Recognition</h3>
-    <p>Fusing EEG brain signals, audio features, and facial expression data for robust emotional state inference, targeting mental health monitoring.</p>
+    <h3>Blood Cell Classification & Domain Adaptation</h3>
+    <p>I work on classifying white blood cells and other blood cells across hospitals with different equipment. This includes a Weight Module that prevents the model from learning misleading patterns when source and target hospitals do not fully match, and reinforcement learning-based style transfer to bridge visual differences between hospitals.</p>
   </article>
   <article class="focus-item">
-    <h3>WBC Detection & Classification</h3>
-    <p>Automated white blood cell detection, counting, and classification using YOLO and Vision Transformers, for resource-limited clinical settings.</p>
+    <h3>Multimodal Report Generation for Blood Smear Analysis</h3>
+    <p>I build AI systems that read microscopy images from blood smear tests and generate clinical reports automatically, combining image data with attention mechanisms and language models. This helps reduce manual reporting work and supports faster diagnosis.</p>
   </article>
   <article class="focus-item">
-    <h3>Clinical Report Generation</h3>
-    <p>Fine-tuning LLMs to produce structured, physician-style clinical reports and patient summaries from diagnostic inputs.</p>
-  </article>
-  <article class="focus-item">
-    <h3>RAG for Clinical Decision Support</h3>
-    <p>Retrieval-augmented generation systems that ground AI responses in verified medical literature.</p>
+    <h3>AI Systems with LLMs and RAG</h3>
+    <p>Beyond research, I build practical AI applications using Retrieval-Augmented Generation (RAG), so answers stay grounded in real data. I used this approach in Matokeo Yangu, a platform that helps Tanzanian students check exam results and receive AI-guided academic advice.</p>
   </article>
 </div>
 
