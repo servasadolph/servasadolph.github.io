@@ -6,7 +6,7 @@
 */
 
 var $nav = $('#site-nav');
-var $btn = $('#site-nav button');
+var $btn = $('#site-nav > button');
 var $vlinks = $('#site-nav .visible-links');
 var $vlinks_persist_tail = $vlinks.children("*.persist.tail");
 var $hlinks = $('#site-nav .hidden-links');
@@ -19,6 +19,9 @@ function updateNav() {
 
   // The visible list is overflowing the nav
   if ($vlinks.width() > availableSpace) {
+    // Show the dropdown btn before measuring so its width is reserved.
+    $btn.removeClass("hidden");
+    availableSpace = $nav.width() - $btn.width() - 30;
 
     while ($vlinks.width() > availableSpace && $vlinks.children("*:not(.persist)").length > 0) {
       // Record the width of the list
@@ -28,9 +31,6 @@ function updateNav() {
       $vlinks.children("*:not(.persist)").last().prependTo($hlinks);
 
       availableSpace = $btn.hasClass("hidden") ? $nav.width() : $nav.width() - $btn.width() - 30;
-
-      // Show the dropdown btn
-      $btn.removeClass("hidden");
     }
 
     // The visible list is not overflowing
