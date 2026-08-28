@@ -47,6 +47,10 @@ I hold an MSc in Big Data Engineering (2023) from Soonchunhyang University and a
 
 <div class="news-list">
   <div class="news-item">
+    <time>2026</time>
+    <p>Our paper <strong>"Pancreas Segmentation Using a Two-Stage Pipeline of Faster R-CNN and TransUNet"</strong> was accepted by <strong>Applied Sciences</strong>.</p>
+  </div>
+  <div class="news-item">
     <time>2024</time>
     <p>Our paper <strong>"WBC YOLO-ViT: 2-Way 2-Stage White Blood Cell Detection and Classification with a Combination of YOLOv5 and Vision Transformer"</strong> was accepted by <strong>Computers in Biology and Medicine</strong>.</p>
   </div>
@@ -56,7 +60,7 @@ I hold an MSc in Big Data Engineering (2023) from Soonchunhyang University and a
   </div>
   <div class="news-item">
     <time>2024</time>
-    <p>Our paper on adapting YOLO-ViT for differential diagnosis of Myelodysplastic Syndromes was presented at the Proceedings of the Korea Society of Computer and Information Conference.</p>
+    <p>Our paper <strong>"Adapting YOLO-ViT for Differential Diagnosis of Myelodysplastic Syndromes and Normal Blood Cell"</strong> was presented at the <strong>Proceedings of the Korea Society of Computer and Information Conference</strong>.</p>
   </div>
   <div class="news-item">
     <time>2023</time>
