@@ -32,4 +32,10 @@ Each project is designed with real-world deployment in mind — not just benchma
     <p>A bilingual (Swahili + English) AI-powered healthcare chatbot designed for low-resource settings in Tanzania — providing accessible clinical guidance where specialist access is limited.</p>
     <p class="project-item__tags">React Native, FastAPI, NLP, Swahili NLP, LangChain</p>
   </article>
+
+  <article class="project-item">
+    <h3>Matokeo Yangu</h3>
+    <p>A bilingual platform that helps Tanzanian students check exam results and receive AI-guided advice on university and career pathways.</p>
+    <p class="project-item__tags">Applied AI, Bilingual support, Tanzania, Education guidance, Career pathways</p>
+  </article>
 </div>
