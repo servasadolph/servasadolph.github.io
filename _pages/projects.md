@@ -10,6 +10,9 @@ Each project is designed with real-world deployment in mind — not just benchma
 
 <div class="project-list">
   <article class="project-item">
+    <figure class="project-item__media">
+      <img src="/images/WBC%20Detection%20%26%20Classification.png" alt="Architecture diagram for the WBC detection and classification pipeline">
+    </figure>
     <h3>WBC Detection & Classification</h3>
     <p>An automated pipeline for white blood cell detection, counting, and classification using YOLO and Vision Transformers. Optimized for deployment in resource-constrained clinical laboratories.</p>
     <p class="project-item__tags">Python, YOLO, ViT, PyTorch, OpenCV</p>
@@ -34,8 +37,11 @@ Each project is designed with real-world deployment in mind — not just benchma
   </article>
 
   <article class="project-item">
+    <figure class="project-item__media">
+      <img src="/images/matokeo%20yangu.png" alt="System architecture and workflow diagram for Matokeo Yangu">
+    </figure>
     <h3>Matokeo Yangu</h3>
     <p>A bilingual platform that helps Tanzanian students check exam results and receive AI-guided advice on university and career pathways.</p>
-    <p class="project-item__tags">Applied AI, Bilingual support, Tanzania, Education guidance, Career pathways</p>
+    <p class="project-item__tags">FastAPI, React PWA, Supabase/PostgreSQL, Hybrid search, RAG, Bilingual support</p>
   </article>
 </div>
