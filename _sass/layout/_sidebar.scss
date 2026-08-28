@@ -54,6 +54,10 @@
     font-family: $sans-serif;
     font-size: $type-size-6;
     line-height: 1.5;
+
+    @include breakpoint($medium) {
+      font-size: $type-size-5;
+    }
   }
 
   img {
@@ -67,10 +71,22 @@
   border: 1px solid var(--global-border-color);
   border-radius: 8px;
   box-shadow: var(--global-card-shadow);
-  padding: 1.2em;
+  padding: 1.1em 1.2em;
+
+  /* Between phone and desktop-column widths, cap the card so it reads as a
+     proportioned profile card instead of a stretched, mostly-empty bar. */
+  @media screen and (min-width: 480px) and (max-width: 924px) {
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.75em 2em;
+  }
 
   @include breakpoint($large) {
+    max-width: none;
+    margin-left: 0;
     margin-right: 0.5em;
+    padding: 1.2em;
   }
 }
 
@@ -161,10 +177,15 @@
   // set width only, for non-square avatars
   // height: 36px;
 
-  @include breakpoint($large) {
+  @include breakpoint($medium) {
     display: block;
     width: auto;
     height: auto;
+    text-align: center;
+  }
+
+  @include breakpoint($large) {
+    text-align: left;
   }
 
   img {
@@ -172,7 +193,7 @@
     border-radius: 50%;
     box-shadow: 0 10px 24px rgba(33, 31, 26, 0.14);
 
-    @include breakpoint($large) {
+    @include breakpoint($medium) {
       padding: 5px;
       background: var(--global-surface-muted-color);
       border: 1px solid var(--global-dark-border-color);
@@ -187,18 +208,23 @@
   padding-right: 25px;
   line-height: 1;
 
-  @include breakpoint($large) {
+  @include breakpoint($medium) {
     display: block;
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+    text-align: center;
+  }
+
+  @include breakpoint($large) {
+    text-align: left;
   }
 }
 
 .author__name {
   margin: 0;
 
-  @include breakpoint($large) {
+  @include breakpoint($medium) {
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -208,11 +234,15 @@
   font-size: $type-size-5;
   font-weight: 700;
   line-height: 1.25;
+
+  @include breakpoint($medium) {
+    font-size: $type-size-4;
+  }
 }
 
 .sidebar .author__desktop {
   display: none;
-  @media screen and (min-width: 1024px) {
+  @include breakpoint($medium) {
     display: block;
   }
 }
@@ -220,7 +250,7 @@
 .author__pronouns {
   margin: 0;
 
-  @include breakpoint($large) {
+  @include breakpoint($medium) {
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -231,7 +261,7 @@
   color: var(--global-text-color-light);
   font-weight: 500;
 
-  @include breakpoint($large) {
+  @include breakpoint($medium) {
     margin-top: 10px;
     margin-bottom: 20px;
   }
@@ -252,14 +282,14 @@
     }
   }
 
-  @include breakpoint($large) {
+  @include breakpoint($medium) {
     display: block;
   }
 
   button {
     margin-bottom: 0;
 
-    @include breakpoint($large) {
+    @include breakpoint($medium) {
       display: none;
     }
   }
@@ -279,7 +309,7 @@
   box-shadow: 0 0 10px rgba(#000, 0.25);
   cursor: default;
 
-  @include breakpoint($large) {
+  @include breakpoint($medium) {
     display: block;
     position: relative;
     margin: 0;
@@ -287,6 +317,7 @@
     border: 0;
     background: transparent;
     box-shadow: none;
+    text-align: left;
   }
 
   &:before {
@@ -301,7 +332,7 @@
     border-color: var(--global-border-color) transparent;
     z-index: 0;
 
-    @include breakpoint($large) {
+    @include breakpoint($medium) {
       display: none;
     }
   }
@@ -318,7 +349,7 @@
     border-color: #fff transparent;
     z-index: 1;
 
-    @include breakpoint($large) {
+    @include breakpoint($medium) {
       display: none;
     }
   }

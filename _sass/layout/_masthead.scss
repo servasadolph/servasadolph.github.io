@@ -62,12 +62,20 @@
   display: block;
   list-style-type: none;
   white-space: nowrap;
-  font-size: 0.94em;
+  font-size: 0.86em;
   font-weight: 600;
 
+  @include breakpoint($medium) {
+    font-size: 0.94em;
+  }
+
   &--lg {
-    padding-right: 2em;
+    padding-right: 0.75em;
     font-weight: 700;
+
+    @include breakpoint($medium) {
+      padding-right: 2em;
+    }
   }
 }
 

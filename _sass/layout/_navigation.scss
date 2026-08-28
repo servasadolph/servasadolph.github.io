@@ -179,11 +179,15 @@
 
   a {
     display: block;
-    margin: 0 1rem;
+    margin: 0 0.6rem;
     padding: 0.55rem 0 0.45rem;
     color: var(--global-masthead-link-color);
     text-decoration: none;
     line-height: 1.2;
+
+    @include breakpoint($medium) {
+      margin: 0 1rem;
+    }
 
     &:hover {
       color: var(--global-masthead-link-color-hover);
@@ -205,6 +209,12 @@
 
   .visible-links {
     display: table;
+
+    /* Reserve room for the absolutely-positioned hamburger button so the
+       persistent palette toggle never sits underneath it on narrow screens. */
+    @media screen and (max-width: $large) {
+      padding-right: 2.75rem;
+    }
 
     li {
       display: table-cell;
@@ -228,24 +238,35 @@
 
     .display-preferences {
       display: inline-flex;
-      gap: 0.5rem;
-      padding-left: 0.75rem;
+      gap: 0.35rem;
+      padding-left: 0.4rem;
+
+      @include breakpoint($medium) {
+        gap: 0.5rem;
+        padding-left: 0.75rem;
+      }
 
       #palette-toggle {
         position: static;
         display: inline-flex;
         align-items: center;
-        gap: 0.24rem;
+        gap: 0.2rem;
         width: auto;
-        height: 2.05rem;
+        height: 1.8rem;
         margin: 0;
-        padding: 0.22rem;
+        padding: 0.18rem;
         border: 1px solid var(--global-border-color);
         border-radius: 999px;
         background-color: var(--global-surface-color);
         box-shadow: 0 10px 20px rgba(33, 31, 26, 0.1);
         cursor: pointer;
         transition: $global-transition;
+
+        @include breakpoint($medium) {
+          gap: 0.24rem;
+          height: 2.05rem;
+          padding: 0.22rem;
+        }
       }
 
       #palette-toggle:hover {
@@ -255,9 +276,14 @@
 
       .palette-toggle__swatch {
         display: block;
-        width: 1.22rem;
-        height: 1.22rem;
+        width: 1rem;
+        height: 1rem;
         border: 1px solid rgba(33, 31, 26, 0.18);
+
+        @include breakpoint($medium) {
+          width: 1.22rem;
+          height: 1.22rem;
+        }
         border-radius: 999px;
       }
 
