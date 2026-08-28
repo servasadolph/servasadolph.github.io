@@ -10,6 +10,7 @@
   height: fit-content;
   top: 0;
   width: 100%;
+  box-shadow: 0 8px 24px rgba(33, 31, 26, 0.05);
 
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
@@ -29,7 +30,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 0.5em 1em;
+    padding: 0.55em 1em;
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
@@ -61,6 +62,8 @@
   display: block;
   list-style-type: none;
   white-space: nowrap;
+  font-size: 0.94em;
+  font-weight: 600;
 
   &--lg {
     padding-right: 2em;
@@ -69,15 +72,15 @@
 }
 
 .masthead__menu-item.selected a {
-  color: var(--global-text-color);
+  color: var(--global-base-color);
   font-weight: 700;
-  border-bottom: 2px solid var(--global-text-color);
+  border-bottom: 2px solid var(--global-base-color);
   pointer-events: none; /* Move this here */
   cursor: default; /* Move this here too */
 }
 
 .masthead__menu-item.selected a:hover {
-  color: var(--global-text-color);
-  border-bottom: 2px solid var(--global-text-color);
+  color: var(--global-base-color);
+  border-bottom: 2px solid var(--global-base-color);
   /* No need to repeat pointer-events and cursor here */
 }

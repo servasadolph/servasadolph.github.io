@@ -30,15 +30,16 @@ $sidebar-screen-min-width   : 1024px;
 :root {
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #f4f3ee;
-    --global-bg-wash                    : rgba(255, 255, 255, 0.78);
+    --global-bg-wash                    : rgba(255, 255, 255, 0.86);
     --global-bg-wash-end                : rgba(244, 243, 238, 0);
-    --global-bg-grid                    : rgba(80, 79, 74, 0.03);
+    --global-bg-grid                    : rgba(80, 79, 74, 0.025);
     --global-surface-color              : #b1ada1;
-    --global-surface-muted-color        : #c5c1b7;
-    --global-masthead-bg-color          : rgba(244, 243, 238, 0.9);
+    --global-surface-muted-color        : #cbc7bb;
+    --global-surface-raised-color       : #d8d4c8;
+    --global-masthead-bg-color          : rgba(244, 243, 238, 0.94);
     --global-footer-bg-color            : #b1ada1;
-    --global-border-color               : #aaa599;
-    --global-dark-border-color          : #8b867b;
+    --global-border-color               : rgba(92, 87, 78, 0.22);
+    --global-dark-border-color          : rgba(67, 62, 54, 0.42);
     --global-code-background-color      : #ebe9e1;
     --global-code-text-color            : #{$darker-gray};
     --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
@@ -47,9 +48,10 @@ $sidebar-screen-min-width   : 1024px;
     --global-link-color-visited         : #5d8f9a;
     --global-masthead-link-color        : #26383f;
     --global-masthead-link-color-hover  : #1f7a8c;
-    --global-text-color                 : #26383f;
-    --global-text-color-light           : #5e5a51;
+    --global-text-color                 : #1f3339;
+    --global-text-color-light           : #554f45;
     --global-thead-color                : #ccc8be;
-    --global-soft-shadow                : 0 18px 45px rgba(38, 56, 63, 0.08);
+    --global-soft-shadow                : 0 18px 45px rgba(38, 56, 63, 0.11);
+    --global-card-shadow                : 0 16px 34px rgba(38, 56, 63, 0.13);
 }
 

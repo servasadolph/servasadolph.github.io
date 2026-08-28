@@ -38,15 +38,16 @@ $sidebar-screen-min-width   : 1024px;
 html[data-theme="dark"] {
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #{$background};
-    --global-bg-wash                    : rgba(244, 243, 238, 0.42);
+    --global-bg-wash                    : rgba(244, 243, 238, 0.34);
     --global-bg-wash-end                : rgba(177, 173, 161, 0);
-    --global-bg-grid                    : rgba(33, 31, 26, 0.035);
+    --global-bg-grid                    : rgba(33, 31, 26, 0.026);
     --global-surface-color              : #f4f3ee;
-    --global-surface-muted-color        : #ebe9e1;
-    --global-masthead-bg-color          : rgba(177, 173, 161, 0.9);
+    --global-surface-muted-color        : #e6e2d8;
+    --global-surface-raised-color       : #fbfaf6;
+    --global-masthead-bg-color          : rgba(177, 173, 161, 0.93);
     --global-footer-bg-color            : #f4f3ee;
-    --global-border-color               : #8f897d;
-    --global-dark-border-color          : #746e63;
+    --global-border-color               : rgba(58, 52, 43, 0.24);
+    --global-dark-border-color          : rgba(58, 52, 43, 0.44);
     --global-code-background-color      : #e7e3d8;
     --global-code-text-color            : #{$text};
     --global-fig-caption-color          : #5b564d;
@@ -58,6 +59,7 @@ html[data-theme="dark"] {
     --global-text-color                 : #{$text};
     --global-text-color-light           : #5b564d;
     --global-thead-color                : #ccc6b9;
-    --global-soft-shadow                : 0 18px 45px rgba(33, 31, 26, 0.12);
+    --global-soft-shadow                : 0 18px 45px rgba(33, 31, 26, 0.14);
+    --global-card-shadow                : 0 16px 34px rgba(33, 31, 26, 0.16);
 }
 

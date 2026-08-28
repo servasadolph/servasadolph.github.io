@@ -62,11 +62,12 @@
 }
 
 .sidebar > div[itemscope] {
-  background: var(--global-surface-color);
+  background:
+    linear-gradient(180deg, var(--global-surface-raised-color) 0%, var(--global-surface-color) 100%);
   border: 1px solid var(--global-border-color);
-  border-radius: 10px;
-  box-shadow: var(--global-soft-shadow);
-  padding: 1.15em;
+  border-radius: 8px;
+  box-shadow: var(--global-card-shadow);
+  padding: 1.2em;
 
   @include breakpoint($large) {
     margin-right: 0.5em;
@@ -169,9 +170,10 @@
   img {
     max-width: 175px;
     border-radius: 50%;
+    box-shadow: 0 10px 24px rgba(33, 31, 26, 0.14);
 
     @include breakpoint($large) {
-      padding: 4px;
+      padding: 5px;
       background: var(--global-surface-muted-color);
       border: 1px solid var(--global-dark-border-color);
     }
@@ -204,6 +206,8 @@
 .sidebar .author__name {
   font-family: $sans-serif;
   font-size: $type-size-5;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .sidebar .author__desktop {
@@ -224,6 +228,8 @@
 
 .author__bio {
   margin: 0;
+  color: var(--global-text-color-light);
+  font-weight: 500;
 
   @include breakpoint($large) {
     margin-top: 10px;
@@ -328,11 +334,13 @@
     padding-top: 2px;
     padding-bottom: 2px;
     color: inherit;
-    font-size: $type-size-5;
+    font-size: $type-size-6;
+    font-weight: 600;
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+      color: var(--global-link-color-hover);
+      text-decoration: none;
     }
   }
 }
