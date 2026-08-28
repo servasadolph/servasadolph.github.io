@@ -69,8 +69,6 @@ redirect_from:
     </div>
     <p>Advisor: <a href="https://home.sch.ac.kr/profile/main.jsp?id=8bcb6229bdbd2ebb88f25058db0597e6c86482e6c745cf914a2d3e61be754acb2197c74bb2db433d">Prof. Woo Ji-Young</a></p>
     <ul>
-      <li>Emotion Detection Using Multimodal Modalities — ongoing work on emotion detection using multimodal data, including text, audio, and images, across multiple languages.</li>
-      <li>Mental Health Analysis — developing machine learning models for analyzing mental health conditions and detecting early signs that can support intervention and personalized care.</li>
       <li>Domain Adaptation in Medical AI — developing transfer learning and domain adaptation methods for generalizing medical imaging and healthcare models across clinical sites, imaging protocols, and patient populations.</li>
       <li>Medical Report Generation & RAG for Clinical Decision Support — building LLM-based systems that produce structured clinical reports and physician-style patient summaries, grounded in verified medical literature via Retrieval-Augmented Generation.</li>
     </ul>
