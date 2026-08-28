@@ -23,6 +23,15 @@ redirect_from:
 * **Clinical Report Generation** — fine-tuning LLMs to produce structured, physician-style clinical reports and patient summaries from diagnostic inputs.
 * **RAG for Clinical Decision Support** — retrieval-augmented generation systems that ground AI responses in verified medical literature.
 
+# Skills
+
+* **Programming Languages** — Python, Java, C++
+* **Machine Learning & AI** — TensorFlow, Keras, Scikit-Learn, YOLO, GANs
+* **AI Automation & Chatbots** — LangChain, Natural Language Processing (NLP)
+* **Data Analysis** — healthcare data analytics, statistical modeling, multimodal data analysis
+* **Tools** — Jupyter Notebook, VS Code, GitHub
+* **Healthcare Expertise** — EHR data analysis, white blood cell classification
+
 # Recent News
 
 * 2024, our paper **"WBC YOLO-ViT: 2-Way 2-Stage White Blood Cell Detection and Classification with a Combination of YOLOv5 and Vision Transformer"** was accepted by **Computers in Biology and Medicine**.
