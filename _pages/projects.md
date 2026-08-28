@@ -6,6 +6,8 @@ author_profile: true
 
 Each project is designed with real-world deployment in mind — not just benchmark performance.
 
+## Selected Projects
+
 * <b>WBC Detection & Classification</b> <br>
   An automated pipeline for white blood cell detection, counting, and classification using YOLO and Vision Transformers. Optimized for deployment in resource-constrained clinical laboratories.<br>
   <i>Python, YOLO, ViT, PyTorch, OpenCV</i>

@@ -1,10 +1,13 @@
 ---
-title: "Publications [[Google Scholar](https://scholar.google.com/citations?user=LCd83TUAAAAJ)]"
+title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
 
-**Journal Articles**
+[[Google Scholar profile](https://scholar.google.com/citations?user=LCd83TUAAAAJ)]
+
+## Journal Articles
+
 * <b>Diffusion-based Wasserstein Generative Adversarial Network for Blood Cell Image Augmentation</b> <br>
   Emmanuel Edward Ngasa, Mi-Ae Jang, Servas Adolph Tarimo, Jiyoung Woo, and Hee Bong Shin.<br>
   <b>Engineering Applications of Artificial Intelligence, 2024.</b><br>
@@ -15,7 +18,8 @@ author_profile: true
   <b>Computers in Biology and Medicine, 2024.</b><br>
   [[DOI](https://doi.org/10.1016/j.compbiomed.2024.107875)]
 
-**Conference Papers**
+## Conference Papers
+
 * <b>Adapting YOLO-ViT for Differential Diagnosis of Myelodysplastic Syndromes and Normal Blood Cell</b> <br>
   <b>Proceedings of the Korea Society of Computer and Information Conference, 2024.</b>
 
