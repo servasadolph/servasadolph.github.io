@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-# About me [[CV](https://drive.google.com/file/d/1wT7QgBuHbP4l5IiLpIh4yWSUn_08Bkdx)]
+# About me [[CV](/files/Servas_Adolph_CV_2024_Updated_09.pdf)]
 
 * I am a PhD researcher in the [Department of Future Convergence Technology](https://www.sch.ac.kr/) at **Soonchunhyang University, South Korea**. My work centers on multimodal machine learning for healthcare — designing intelligent systems that integrate medical images, EEG signals, audio, facial expressions, and clinical text to enable more comprehensive clinical understanding.
 * My research addresses one of the core challenges of medical AI: generalization. I develop domain adaptation methods that allow models to transfer reliably across hospitals, devices, and patient populations. In parallel, I build clinical AI systems powered by large language models, including medical report generation and Retrieval-Augmented Generation (RAG) frameworks for evidence-grounded decision support.

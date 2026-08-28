@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+[[Download full CV (PDF)](/files/Servas_Adolph_CV_2024_Updated_09.pdf)]
+
 ## Education
 * Ph.D. Student, Future Convergence Technology, [Soonchunhyang University](https://www.sch.ac.kr/), South Korea, 2023 - Present
 * M.Sc. Big Data Engineering, [Soonchunhyang University](https://www.sch.ac.kr/), South Korea, 2021 - 2023
