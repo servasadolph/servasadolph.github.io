@@ -18,21 +18,13 @@
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
-          <li class="masthead__menu-item display-preferences persist tail" aria-label="Display preferences">
+          <li class="masthead__menu-item display-preferences persist tail" aria-label="Color preferences">
             <label>
               <span>Color</span>
               <select id="color-mode-select" aria-label="Color mode">
                 <option value="light">Light</option>
                 <option value="dark">Dark</option>
                 <option value="system">Match System</option>
-              </select>
-            </label>
-            <label>
-              <span>Font</span>
-              <select id="font-style-select" aria-label="Chat font style">
-                <option value="default">Default</option>
-                <option value="system">Match System</option>
-                <option value="dyslexic">Dyslexic Friendly</option>
               </select>
             </label>
           </li>
