@@ -12,7 +12,10 @@ html {
 body {
   /* Set via _themes.scss */
   color: var(--global-text-color);
-  background-color: var(--global-bg-color);
+  background:
+    linear-gradient(180deg, var(--global-bg-wash) 0, var(--global-bg-wash-end) 18rem),
+    repeating-linear-gradient(90deg, var(--global-bg-grid) 0 1px, transparent 1px 96px),
+    var(--global-bg-color);
 
   margin: 0;
   padding: $masthead-height 0 0;
@@ -24,6 +27,32 @@ body {
     /* when primary navigation is visible, the content in the background won't scroll */
     overflow: hidden;
   }
+}
+
+html[data-font="system"] body {
+  font-family: var(--font-system);
+}
+
+html[data-font="dyslexic"] body {
+  font-family: var(--font-dyslexic);
+  font-size: 1.02rem;
+  letter-spacing: 0.015em;
+  line-height: 1.65;
+  word-spacing: 0.08em;
+}
+
+html[data-font="dyslexic"] h1,
+html[data-font="dyslexic"] h2,
+html[data-font="dyslexic"] h3,
+html[data-font="dyslexic"] h4,
+html[data-font="dyslexic"] h5,
+html[data-font="dyslexic"] h6 {
+  font-family: var(--font-dyslexic);
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: rgba(31, 122, 140, 0.18);
 }
 
 h1, h2, h3, h4, h5, h6 {
