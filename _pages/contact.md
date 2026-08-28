@@ -52,4 +52,8 @@ Open to research collaborations, academic discussions, and opportunities at the 
     <span class="contact-list__label"><i class="fab fa-x-twitter" aria-hidden="true"></i><strong>X / Twitter</strong></span>
     <a href="https://x.com/servasadolph">@servasadolph</a>
   </div>
+  <div class="contact-list__item">
+    <span class="contact-list__label"><i class="fab fa-youtube" aria-hidden="true"></i><strong>YouTube</strong></span>
+    <a href="https://www.youtube.com/@servasadolph">@servasadolph</a>
+  </div>
 </div>
