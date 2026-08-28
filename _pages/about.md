@@ -12,11 +12,13 @@ redirect_from:
 
 [CV](/files/Servas_Adolph_CV_2024_Updated_09.pdf){: .profile-link}
 
-I am a PhD researcher in Future Convergence Technology / Big Data Engineering at [Soonchunhyang University](https://www.sch.ac.kr/), South Korea. My work centers on multimodal machine learning for healthcare — designing intelligent systems that integrate medical images, EEG signals, audio, facial expressions, and clinical text to enable more comprehensive clinical understanding.
+I am a PhD researcher in Future Convergence Technology / Big Data Engineering at [Soonchunhyang University](https://www.sch.ac.kr/), South Korea. My work focuses on AI for healthcare, with an emphasis on building intelligent systems that can support clinical decision-making and improve access to reliable medical insight.
 
-My research addresses one of the core challenges of medical AI: generalization. I develop domain adaptation methods that allow models to transfer reliably across hospitals, devices, and patient populations. In parallel, I build clinical AI systems powered by large language models, including medical report generation and Retrieval-Augmented Generation (RAG) frameworks for evidence-grounded decision support.
+My core research area is domain adaptation. I develop AI models that remain reliable when transferred across hospitals, imaging devices, clinical environments, and patient populations where data distributions may differ. I also design multimodal systems that combine medical images, clinical notes, and other patient data to support a more complete understanding of health conditions.
 
-I grew up in Tanzania, where access to specialist healthcare remains limited. That experience shapes my research vision: to build multimodal AI systems that are not only state-of-the-art, but deployable, trustworthy, and impactful in real-world clinical environments — especially in low-resource settings, starting with Tanzania and sub-Saharan Africa.
+Beyond research, I build applied AI systems using large language models. I use Retrieval-Augmented Generation (RAG) to make AI responses more accurate, traceable, and grounded in trusted information rather than unsupported generation. I have also applied this thinking beyond medicine through Matokeo Yangu, a bilingual platform that helps Tanzanian students check exam results and receive AI-guided advice on university and career pathways.
+
+I am from Tanzania, and that background shapes the problems I care about. My goal is to build AI health systems that are not only accurate, but also practical, trustworthy, and useful in real-world settings, especially in places like Tanzania and other parts of Africa where access to specialists can be limited.
 
 I hold an MSc in Big Data Engineering (2023) from Soonchunhyang University and a BSc in Computer Engineering & Information Technology from the United African University of Tanzania. Full education and research experience details are on the [Education & Experience](/cv/) page.
 
