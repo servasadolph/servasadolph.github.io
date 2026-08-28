@@ -10,6 +10,13 @@ author_profile: true
 
 <div class="publication-list">
   <article class="publication-item">
+    <h3>Pancreas Segmentation Using a Two-Stage Pipeline of Faster R-CNN and TransUNet</h3>
+    <p class="publication-item__authors">Yunjung Hong, Servas Adolph Tarimo, and Jiyoung Woo.</p>
+    <p class="publication-item__venue">Applied Sciences, 16(12), 5764, 2026.</p>
+    <p class="publication-item__links"><a href="https://doi.org/10.3390/app16125764">DOI</a></p>
+  </article>
+
+  <article class="publication-item">
     <h3>Diffusion-based Wasserstein Generative Adversarial Network for Blood Cell Image Augmentation</h3>
     <p class="publication-item__authors">Emmanuel Edward Ngasa, Mi-Ae Jang, Servas Adolph Tarimo, Jiyoung Woo, and Hee Bong Shin.</p>
     <p class="publication-item__venue">Engineering Applications of Artificial Intelligence, 2024.</p>
