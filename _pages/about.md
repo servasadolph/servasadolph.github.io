@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "Servas Adolph"
-excerpt: "About me"
+excerpt: "PhD researcher in multimodal AI, domain adaptation, and clinical machine learning for healthcare."
 author_profile: true
 redirect_from:
   - /about/
