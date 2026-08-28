@@ -12,33 +12,19 @@
 
   @include clearfix();
   margin-bottom: 1em;
+  min-width: 0;
 
   @media (orientation: portrait) {
     margin-top: 1em;
   }
 
+  /* Sticky (not fixed) so it stays in normal grid flow and can never
+     overlap or misalign with the content column while following scroll. */
   @media screen and (min-width: $sidebar-screen-min-width) {
-    height: 100vh;
-    overflow-y: auto;               // Add scrollbar if the sidebar is too long
-    position: fixed;
-    padding-top: $masthead-height;
-  }
-
-  @include breakpoint($large) {
-    @include span(2 of 12);
-    opacity: 1;
-    padding-right: 1.25em;
-    -webkit-transition: opacity 0.2s ease-in-out;
-            transition: opacity 0.2s ease-in-out;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  @include breakpoint($x-large) {
-    max-width: $sidebar-link-max-width;
-    padding-right: 0;
+    position: sticky;
+    top: $masthead-height;
+    max-height: calc(100vh - #{$masthead-height});
+    overflow-y: auto;
   }
 
   h2, h3, h4, h5, h6 {
@@ -85,8 +71,8 @@
   @include breakpoint($large) {
     max-width: none;
     margin-left: 0;
-    margin-right: 0.5em;
-    padding: 1.2em;
+    margin-right: 0;
+    padding: 1.35em 1.25em;
   }
 }
 
@@ -355,11 +341,12 @@
   }
 
   li {
-    white-space: nowrap;
+    overflow-wrap: anywhere;
   }
 
   a {
     display: block;
+    overflow-wrap: anywhere;
     margin-bottom: 5px;
     padding-right: 5px;
     padding-top: 2px;
