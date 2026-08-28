@@ -1,31 +1,36 @@
 (function () {
-  var themeSelect;
-  var colorQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  var paletteToggle;
 
   function storedTheme() {
-    var value = localStorage.getItem("theme") || "system";
-    return ["light", "dark", "system"].indexOf(value) >= 0 ? value : "system";
-  }
-
-  function resolvedTheme(value) {
-    if (value === "system") {
-      return colorQuery && colorQuery.matches ? "dark" : "light";
+    var value = localStorage.getItem("theme") || "light";
+    if (value === "alternate") {
+      return "dark";
     }
-    return value;
+    if (value === "primary" || value === "system") {
+      return "light";
+    }
+    return value === "dark" ? value : "light";
   }
 
   function applyTheme(value) {
-    localStorage.setItem("theme", value);
-    if (resolvedTheme(value) === "dark") {
+    var theme = value === "dark" || value === "alternate" ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+    if (theme === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
     } else {
       document.documentElement.removeAttribute("data-theme");
     }
+    syncControls();
   }
 
   function syncControls() {
-    if (themeSelect) {
-      themeSelect.value = storedTheme();
+    if (paletteToggle) {
+      var isAlternate = storedTheme() === "dark";
+      paletteToggle.setAttribute("aria-pressed", isAlternate ? "true" : "false");
+      paletteToggle.setAttribute(
+        "title",
+        isAlternate ? "Switch to off-white background" : "Switch to taupe background"
+      );
     }
   }
 
@@ -35,24 +40,16 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    themeSelect = document.getElementById("color-mode-select");
+    paletteToggle = document.getElementById("palette-toggle");
 
-    if (themeSelect) {
-      themeSelect.addEventListener("change", function (event) {
-        applyTheme(event.target.value);
+    if (paletteToggle) {
+      paletteToggle.addEventListener("click", function () {
+        applyTheme(storedTheme() === "dark" ? "light" : "dark");
       });
     }
 
     applyStoredPreferences();
   });
-
-  if (colorQuery && colorQuery.addEventListener) {
-    colorQuery.addEventListener("change", function () {
-      if (storedTheme() === "system") {
-        applyTheme("system");
-      }
-    });
-  }
 
   applyStoredPreferences();
 })();

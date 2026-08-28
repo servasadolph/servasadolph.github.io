@@ -230,26 +230,45 @@
       gap: 0.5rem;
       padding-left: 0.75rem;
 
-      label {
+      #palette-toggle {
+        position: static;
         display: inline-flex;
         align-items: center;
-        gap: 0.35rem;
+        gap: 0.2rem;
+        width: auto;
+        height: 2rem;
         margin: 0;
-        color: var(--global-text-color-light);
-        font-size: $type-size-7;
-        font-weight: 600;
-        white-space: nowrap;
-      }
-
-      select {
-        max-width: 9.75rem;
-        padding: 0.35rem 1.55rem 0.35rem 0.55rem;
+        padding: 0.25rem;
         border: 1px solid var(--global-border-color);
         border-radius: 999px;
         background-color: var(--global-surface-color);
-        color: var(--global-text-color);
-        font: inherit;
+        box-shadow: 0 8px 18px rgba(33, 31, 26, 0.08);
         cursor: pointer;
+        transition: $global-transition;
+      }
+
+      #palette-toggle:hover {
+        transform: translateY(-1px);
+      }
+
+      .palette-toggle__swatch {
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 1px solid rgba(33, 31, 26, 0.18);
+        border-radius: 999px;
+      }
+
+      .palette-toggle__swatch--primary {
+        background: #f4f3ee;
+      }
+
+      .palette-toggle__swatch--alternate {
+        background: #b1ada1;
+      }
+
+      #palette-toggle[aria-pressed="true"] {
+        background-color: var(--global-bg-color);
       }
     }
 

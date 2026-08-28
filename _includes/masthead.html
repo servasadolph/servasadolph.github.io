@@ -18,15 +18,11 @@
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
-          <li class="masthead__menu-item display-preferences persist tail" aria-label="Color preferences">
-            <label>
-              <span>Color</span>
-              <select id="color-mode-select" aria-label="Color mode">
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-                <option value="system">Match System</option>
-              </select>
-            </label>
+          <li class="masthead__menu-item display-preferences persist tail">
+            <button id="palette-toggle" type="button" aria-label="Toggle site colors" aria-pressed="false">
+              <span class="palette-toggle__swatch palette-toggle__swatch--primary"></span>
+              <span class="palette-toggle__swatch palette-toggle__swatch--alternate"></span>
+            </button>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
