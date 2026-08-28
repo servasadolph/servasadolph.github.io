@@ -75,31 +75,15 @@ redirect_from:
   </article>
 </div>
 
-## Skills
+## Work experience
 
-<div class="skill-list">
-  <div class="skill-item">
-    <strong>Programming Languages</strong>
-    <span>Python, Java, C++</span>
-  </div>
-  <div class="skill-item">
-    <strong>Machine Learning & AI</strong>
-    <span>TensorFlow, Keras, Scikit-Learn, YOLO, GANs</span>
-  </div>
-  <div class="skill-item">
-    <strong>AI Automation & Chatbots</strong>
-    <span>LangChain, Natural Language Processing (NLP)</span>
-  </div>
-  <div class="skill-item">
-    <strong>Data Analysis</strong>
-    <span>Healthcare data analytics, statistical modeling, multimodal data analysis</span>
-  </div>
-  <div class="skill-item">
-    <strong>Tools</strong>
-    <span>Jupyter Notebook, VS Code, GitHub</span>
-  </div>
-  <div class="skill-item">
-    <strong>Healthcare Expertise</strong>
-    <span>EHR data analysis, white blood cell classification</span>
-  </div>
+<div class="timeline-list">
+  <article class="timeline-item">
+    <div class="timeline-item__header">
+      <h3>Research Assistant</h3>
+      <span>2021.09 - Present</span>
+    </div>
+    <p>Advanced Data Mining Lab (ADM Lab), <a href="https://www.sch.ac.kr/">Soonchunhyang University</a>, South Korea.</p>
+    <p>Job description: Developing medical AI systems for blood-cell image analysis, domain adaptation across clinical sites, multimodal report generation, and RAG-based clinical decision-support workflows, working with <a href="https://home.sch.ac.kr/profile/main.jsp?id=8bcb6229bdbd2ebb88f25058db0597e6c86482e6c745cf914a2d3e61be754acb2197c74bb2db433d">Prof. Woo Ji-Young</a>.</p>
+  </article>
 </div>
