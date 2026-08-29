@@ -9,11 +9,14 @@ author_profile: true
   <div class="document-viewer__header">
     <p class="document-viewer__eyebrow">MSc Thesis</p>
     <h2>WBC YOLO-ViT</h2>
-    <p>Read the MSc thesis in the embedded viewer below.</p>
+    <p>Read the MSc thesis below.</p>
   </div>
-  <iframe
-    src="/files/Servas_Adolph_Tarimo_Thesis_2023.pdf#toolbar=0&navpanes=0"
-    title="Servas Adolph Tarimo MSc thesis"
-    loading="lazy">
-  </iframe>
+  <div class="document-page-list" aria-label="MSc thesis pages">
+    {% for page in (1..66) %}
+      <figure class="document-page">
+        <img src="/images/documents/thesis/page-{{ page }}.webp" alt="MSc thesis page {{ page }}" loading="lazy">
+        <figcaption>Page {{ page }} of 66</figcaption>
+      </figure>
+    {% endfor %}
+  </div>
 </div>

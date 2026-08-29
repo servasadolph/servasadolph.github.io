@@ -21,7 +21,8 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "files" / "Servas_Adolph_CV_2024_Updated_09.pdf"
+OUTPUT = ROOT / "tmp" / "pdfs" / "Servas_Adolph_CV_2024_Updated_09.pdf"
+OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
 INK = colors.HexColor("#0d1b2a")
 TEAL = colors.HexColor("#1f4f5f")
@@ -373,27 +374,6 @@ def build():
                 "2017.01 - 2020.08",
                 "The United African University of Tanzania (UAUT)<br/>B.Sc. in Computer Engineering and Information Technology",
                 "Dar es Salaam, Tanzania",
-                [],
-                st,
-            ),
-            dated_entry(
-                "2012.01 - 2014.01",
-                "University of Dar es Salaam Computing Centre (UCC)<br/>Diploma in Computing and Information Technology",
-                "Dar es Salaam, Tanzania",
-                [],
-                st,
-            ),
-            dated_entry(
-                "2011.01 - 2012.02",
-                "University of Dar es Salaam Computing Centre (UCC)<br/>Certificate in Computing and Information Technology",
-                "Dar es Salaam, Tanzania",
-                [],
-                st,
-            ),
-            dated_entry(
-                "2007.01 - 2010.11",
-                "Mbalizi Secondary School<br/>Certificate of Secondary School",
-                "Mbeya, Tanzania",
                 [],
                 st,
             ),

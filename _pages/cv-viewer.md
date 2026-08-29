@@ -9,11 +9,14 @@ author_profile: true
   <div class="document-viewer__header">
     <p class="document-viewer__eyebrow">Curriculum Vitae</p>
     <h2>Servas Adolph Tarimo</h2>
-    <p>Read the current academic CV in the embedded viewer below.</p>
+    <p>Read the current academic CV below.</p>
   </div>
-  <iframe
-    src="/files/Servas_Adolph_CV_2024_Updated_09.pdf#toolbar=0&navpanes=0"
-    title="Servas Adolph Tarimo curriculum vitae"
-    loading="lazy">
-  </iframe>
+  <div class="document-page-list" aria-label="Curriculum vitae pages">
+    {% for page in (1..13) %}
+      <figure class="document-page">
+        <img src="/images/documents/cv/page-{{ page }}.webp" alt="Curriculum vitae page {{ page }}" loading="lazy">
+        <figcaption>Page {{ page }} of 13</figcaption>
+      </figure>
+    {% endfor %}
+  </div>
 </div>
