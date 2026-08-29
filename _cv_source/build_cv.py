@@ -68,9 +68,27 @@ def styles():
             "section",
             parent=base["Heading2"],
             fontName="Helvetica-Bold",
-            fontSize=11.2,
-            leading=13.5,
+            fontSize=12,
+            leading=14.5,
             textColor=INK,
+        ),
+        "kicker": ParagraphStyle(
+            "kicker",
+            parent=base["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=7.3,
+            leading=9,
+            textColor=TEAL,
+            alignment=TA_CENTER,
+        ),
+        "note": ParagraphStyle(
+            "note",
+            parent=base["BodyText"],
+            fontName="Helvetica",
+            fontSize=8.35,
+            leading=11.4,
+            textColor=MUTED,
+            spaceAfter=5,
         ),
         "role": ParagraphStyle(
             "role",
@@ -126,23 +144,51 @@ def p(text, style):
 
 def section(title, st):
     return [
-        Spacer(1, 5),
+        Spacer(1, 8),
         Table(
-            [[p(title.upper(), st["section"])]],
-            colWidths=[170 * mm],
+            [[p(title.upper(), st["section"]), p("REVIEWER FOCUS", st["kicker"])]],
+            colWidths=[130 * mm, 40 * mm],
             style=TableStyle(
                 [
                     ("BACKGROUND", (0, 0), (-1, -1), WARM),
                     ("BOX", (0, 0), (-1, -1), 0.35, LINE),
+                    ("LINEBEFORE", (1, 0), (1, 0), 0.35, LINE),
+                    ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
                     ("LEFTPADDING", (0, 0), (-1, -1), 6),
                     ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-                    ("TOPPADDING", (0, 0), (-1, -1), 3),
-                    ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+                    ("TOPPADDING", (0, 0), (-1, -1), 4),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
                 ]
             ),
         ),
-        Spacer(1, 5),
+        Spacer(1, 7),
     ]
+
+
+def section_intro(text, st):
+    return Table(
+        [[p(text, st["note"])]],
+        colWidths=[170 * mm],
+        style=TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, -1), SOFT),
+                ("BOX", (0, 0), (-1, -1), 0.35, LINE),
+                ("LEFTPADDING", (0, 0), (-1, -1), 7),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 7),
+                ("TOPPADDING", (0, 0), (-1, -1), 6),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+            ]
+        ),
+    )
+
+
+def new_section(story, title, st, intro=None, break_before=True):
+    if break_before:
+        story.append(PageBreak())
+    story.extend(section(title, st))
+    if intro:
+        story.append(section_intro(intro, st))
+        story.append(Spacer(1, 7))
 
 
 def bullets(items, st):
@@ -243,7 +289,13 @@ def build():
         ),
     ]
 
-    story += section("Personal Information", st)
+    new_section(
+        story,
+        "Personal Information",
+        st,
+        "Core profile details kept concise for public academic review. Sensitive personal fields from the older CV, such as birth date and marital status, are intentionally omitted.",
+        break_before=False,
+    )
     story.append(
         simple_rows(
             [
@@ -255,7 +307,12 @@ def build():
         )
     )
 
-    story += section("Professional Summary", st)
+    new_section(
+        story,
+        "Professional Summary",
+        st,
+        "A short research identity statement connecting the current portfolio direction with long-term academic goals.",
+    )
     story.append(
         p(
             "Servas Adolph Tarimo is a PhD researcher in Future Convergence Technology / Big Data Engineering "
@@ -268,7 +325,12 @@ def build():
         )
     )
 
-    story += section("Skills", st)
+    new_section(
+        story,
+        "Skills",
+        st,
+        "Technical skills are grouped by how a reviewer or collaborator would scan them: programming, AI methods, LLM systems, data analysis, tools, and healthcare application areas.",
+    )
     story.append(
         simple_rows(
             [
@@ -283,8 +345,12 @@ def build():
         )
     )
 
-    story.append(PageBreak())
-    story += section("Education", st)
+    new_section(
+        story,
+        "Education",
+        st,
+        "Formal academic training is kept in the original timeline style, with the current PhD program name aligned to the website and the MSc thesis connected to the published paper.",
+    )
     story.extend(
         [
             dated_entry(
@@ -299,7 +365,7 @@ def build():
                 "Soonchunhyang University<br/>M.Sc. in Big Data Engineering<br/>Advisor: Prof. Woo Ji-Young<br/>Lab: Advanced Data Mining Lab (ADM Lab)",
                 "Asan, South Korea",
                 [
-                    'Dissertation: WBC YOLO-ViT: 2-Way 2-Stage White Blood Cell Detection and Classification with a Combination of YOLOv5 and Vision Transformer. <link href="https://doi.org/10.1016/j.compbiomed.2023.107875">Paper</link> | <link href="https://servasadolph.github.io/files/Servas_Adolph_Tarimo_Thesis_2023.pdf">Thesis PDF</link>.',
+                    'Dissertation: WBC YOLO-ViT: 2-Way 2-Stage White Blood Cell Detection and Classification with a Combination of YOLOv5 and Vision Transformer. <link href="https://doi.org/10.1016/j.compbiomed.2023.107875">Paper</link> | <link href="https://servasadolph.github.io/thesis-viewer/">View thesis</link>.',
                 ],
                 st,
             ),
@@ -334,8 +400,12 @@ def build():
         ]
     )
 
-    story.append(PageBreak())
-    story += section("Research Experience", st)
+    new_section(
+        story,
+        "Research Experience",
+        st,
+        "Research activity is separated into current PhD work and completed MSc-era work so the progression from blood-cell analysis to domain adaptation and report generation is clear.",
+    )
     story.extend(
         [
             dated_entry(
@@ -364,7 +434,12 @@ def build():
         ]
     )
 
-    story += section("Research Interest", st)
+    new_section(
+        story,
+        "Research Interest",
+        st,
+        "These interests summarize the research themes that connect the publications, current projects, and practical AI systems.",
+    )
     story.append(
         bullets(
             [
@@ -378,7 +453,12 @@ def build():
         )
     )
 
-    story += section("Work Experience", st)
+    new_section(
+        story,
+        "Work Experience",
+        st,
+        "Professional experience is written in a reviewer-friendly format that highlights role, lab, institution, and practical research responsibilities.",
+    )
     story.append(
         dated_entry(
             "2021.09 - Present",
@@ -391,8 +471,12 @@ def build():
         )
     )
 
-    story.append(PageBreak())
-    story += section("Participating Projects", st)
+    new_section(
+        story,
+        "Participating Projects",
+        st,
+        "Projects are ordered with ongoing work first and completed work below, matching the public portfolio site.",
+    )
     story.append(
         simple_rows(
             [
@@ -406,7 +490,12 @@ def build():
         )
     )
 
-    story += section("International Journal Articles [*: Co-First or Corresponding Author]", st)
+    new_section(
+        story,
+        "International Journal Articles [*: Co-First or Corresponding Author]",
+        st,
+        "Journal publications use verified author spellings, venue names, years, article numbers, and DOI links.",
+    )
     journal_papers = [
         "Yunjung Hong, Servas Adolph Tarimo, and Jiyoung Woo, \"Pancreas Segmentation Using a Two-Stage Pipeline of Faster R-CNN and TransUNet,\" <i>Applied Sciences</i>, vol. 16, no. 12, article 5764, 2026. doi:10.3390/app16125764.",
         "S.A. Tarimo, Mi-Ae Jang, Emmanuel Edward Ngasa, Hee Bong Shin, HyoJin Shin, and Jiyoung Woo, \"WBC YOLO-ViT: 2-Way 2-Stage White Blood Cell Detection and Classification with a Combination of YOLOv5 and Vision Transformer,\" <i>Computers in Biology and Medicine</i>, vol. 169, article 107875, 2024. doi:10.1016/j.compbiomed.2023.107875.",
@@ -415,7 +504,12 @@ def build():
     for i, paper in enumerate(journal_papers, 1):
         story.append(p(f"{i}. {paper}", st["paper"]))
 
-    story += section("International Conference", st)
+    new_section(
+        story,
+        "International Conference",
+        st,
+        "Conference papers and presentations are listed separately from journal articles for clearer academic review.",
+    )
     conference_papers = [
         "S.A. Tarimo, \"Adapting YOLO-ViT for Differential Diagnosis of Myelodysplastic Syndromes and Normal Blood Cell,\" <i>Proceedings of the Korea Society of Computer and Information Conference</i>, 2024.",
         "S.A. Tarimo and J. Woo, \"White Blood Cell Detection and Classification using YOLOv5 with Hybrid ResNet50-VGG16-SVM,\" in <i>Proceedings of the 6th International Conference on ICT for Smart Health & Home (ICT4sHealth & Home)</i>, Kota Kinabalu, Malaysia, December 18-22, 2022. Presentation: December 19, 2022.",
@@ -423,10 +517,20 @@ def build():
     for i, paper in enumerate(conference_papers, 1):
         story.append(p(f"{i}. {paper}", st["paper"]))
 
-    story += section("Patents", st)
+    new_section(
+        story,
+        "Patents",
+        st,
+        "This section is retained from the original CV structure for completeness.",
+    )
     story.append(p("1. None. Open to future innovations and patent opportunities related to AI, healthcare, clinical decision support, and medical image analysis.", st["body"]))
 
-    story += section("Awards and Honors", st)
+    new_section(
+        story,
+        "Awards and Honors",
+        st,
+        "Earlier academic and technical awards are retained because a formal CV can be more complete than the public portfolio page.",
+    )
     story.append(
         bullets(
             [
@@ -441,7 +545,12 @@ def build():
         )
     )
 
-    story += section("Referee", st)
+    new_section(
+        story,
+        "Referee",
+        st,
+        "Primary academic reference information is kept clear and easy to locate.",
+    )
     story.append(
         p(
             "Prof. Woo Ji-Young, Ph.D.<br/>"

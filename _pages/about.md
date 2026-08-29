@@ -10,7 +10,7 @@ redirect_from:
 
 ## About me
 
-[CV](/files/Servas_Adolph_CV_2024_Updated_09.pdf){: .profile-link}
+[View CV](/cv-viewer/){: .profile-link}
 
 I am a PhD researcher in Future Convergence Technology / Big Data Engineering at [Soonchunhyang University](https://www.sch.ac.kr/), South Korea. My work focuses on AI for healthcare, with an emphasis on building intelligent systems that can support clinical decision-making and improve access to reliable medical insight.
 

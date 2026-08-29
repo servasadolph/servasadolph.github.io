@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Download full CV (PDF)](/files/Servas_Adolph_CV_2024_Updated_09.pdf){: .profile-link}
+[View full CV](/cv-viewer/){: .profile-link}
 
 ## Education
 
@@ -33,7 +33,7 @@ redirect_from:
     </div>
     <p><a href="https://www.sch.ac.kr/">Soonchunhyang University</a>, South Korea</p>
     <ul>
-      <li>Dissertation: WBC YOLO-ViT: 2-Way 2-Stage White Blood Cell Detection and Classification with a Combination of YOLOv5 and Vision Transformer <a href="https://doi.org/10.1016/j.compbiomed.2023.107875">[Paper]</a> <a href="/files/Servas_Adolph_Tarimo_Thesis_2023.pdf">[Thesis PDF]</a></li>
+      <li>Dissertation: WBC YOLO-ViT: 2-Way 2-Stage White Blood Cell Detection and Classification with a Combination of YOLOv5 and Vision Transformer <a href="https://doi.org/10.1016/j.compbiomed.2023.107875">[Paper]</a> <a href="/thesis-viewer/">[View Thesis]</a></li>
       <li>Advisor: <a href="https://home.sch.ac.kr/profile/main.jsp?id=8bcb6229bdbd2ebb88f25058db0597e6c86482e6c745cf914a2d3e61be754acb2197c74bb2db433d">Prof. Woo Ji-Young</a></li>
       <li>Lab: Advanced Data Mining Lab (ADM Lab)</li>
     </ul>
