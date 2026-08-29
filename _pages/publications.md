@@ -27,7 +27,7 @@ author_profile: true
     <h3>WBC YOLO-ViT: 2-Way 2-Stage White Blood Cell Detection and Classification with a Combination of YOLOv5 and Vision Transformer</h3>
     <p class="publication-item__authors">Servas Adolph Tarimo, Mi-Ae Jang, Emmanuel Edward Ngasa, Hee Bong Shin, HyoJin Shin, and Jiyoung Woo.</p>
     <p class="publication-item__venue">Computers in Biology and Medicine, 2024.</p>
-    <p class="publication-item__links"><a href="https://doi.org/10.1016/j.compbiomed.2024.107875">DOI</a></p>
+    <p class="publication-item__links"><a href="https://doi.org/10.1016/j.compbiomed.2023.107875">DOI</a></p>
   </article>
 </div>
 
