@@ -21,7 +21,7 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "tmp" / "pdfs" / "Servas_Adolph_CV_2024_Updated_09.pdf"
+OUTPUT = ROOT / "files" / "Servas_Adolph_CV_2024_Updated_09.pdf"
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
 INK = colors.HexColor("#0d1b2a")
@@ -147,13 +147,12 @@ def section(title, st):
     return [
         Spacer(1, 8),
         Table(
-            [[p(title.upper(), st["section"]), p("REVIEWER FOCUS", st["kicker"])]],
-            colWidths=[130 * mm, 40 * mm],
+            [[p(title.upper(), st["section"])]],
+            colWidths=[170 * mm],
             style=TableStyle(
                 [
                     ("BACKGROUND", (0, 0), (-1, -1), WARM),
                     ("BOX", (0, 0), (-1, -1), 0.35, LINE),
-                    ("LINEBEFORE", (1, 0), (1, 0), 0.35, LINE),
                     ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
                     ("LEFTPADDING", (0, 0), (-1, -1), 6),
                     ("RIGHTPADDING", (0, 0), (-1, -1), 6),
@@ -187,9 +186,6 @@ def new_section(story, title, st, intro=None, break_before=True):
     if break_before:
         story.append(PageBreak())
     story.extend(section(title, st))
-    if intro:
-        story.append(section_intro(intro, st))
-        story.append(Spacer(1, 7))
 
 
 def bullets(items, st):
